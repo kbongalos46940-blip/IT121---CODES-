@@ -1,0 +1,21 @@
+‎Name = "Kim"
+‎age = 18
+‎Height = 1.55
+‎Currently_Working = False
+‎
+‎print("Fullname:",Name)
+‎print(type(Name))
+‎print()
+‎
+‎print("Age:",age)
+‎print(type(age))
+‎print()
+‎
+‎print("Height_in_meters:", Height)
+‎print(type(Height))
+‎print()
+‎
+‎print("Currently_Working?:", Currently_Working)
+‎print()
+‎print(type(Currently_Working))
+‎
