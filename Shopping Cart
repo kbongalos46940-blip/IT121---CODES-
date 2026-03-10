@@ -1,0 +1,79 @@
+# Create a class for the Shopping Cart
+class MyCart:
+    def __init__(self):
+        self.items = []
+
+    # Display items in the cart
+    def display_cart(self):
+        if len(self.items) == 0:
+            print("\nYour cart is empty.")
+        else:
+            print("\nItems in your cart:")
+            for i in range(len(self.items)):
+                print(f"{i+1}. {self.items[i]}")
+
+    # Add a product to the cart
+    def add_product(self):
+        product = input("\nEnter product name: ")
+        self.items.append(product)
+        print(product, "has been added to your cart.")
+
+    # Remove a product from the cart
+    def remove_product(self):
+        if len(self.items) == 0:
+            print("\nThere are no items in the cart.")
+        else:
+            self.display_cart()
+            number = int(input("\nEnter the item number to remove: ")) - 1
+
+            if 0 <= number < len(self.items):
+                removed_item = self.items.pop(number)
+                print(removed_item, "has been removed from the cart.")
+            else:
+                print("Invalid item number.")
+
+    # Checkout the items
+    def checkout_items(self):
+        if len(self.items) == 0:
+            print("\nYour cart is empty.")
+        else:
+            print("\nYou are purchasing the following items:")
+            for item in self.items:
+                print("-", item)
+
+            print("Thank you for your purchase!")
+            self.items.clear()
+
+
+# Create an object of the class
+cart = MyCart()
+
+# Menu system
+while True:
+    print("\n=== Shopping Cart System ===")
+    print("1. View Cart")
+    print("2. Add Product")
+    print("3. Remove Product")
+    print("4. Checkout")
+    print("5. Exit")
+
+    choice = input("\nEnter your choice (1-5): ")
+
+    if choice == "1":
+        cart.display_cart()
+
+    elif choice == "2":
+        cart.add_product()
+
+    elif choice == "3":
+        cart.remove_product()
+
+    elif choice == "4":
+        cart.checkout_items()
+
+    elif choice == "5":
+        print("Exiting the program...")
+        break
+
+    else:
+        print("Invalid choice. Please try again.")
